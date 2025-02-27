@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 const connectDatabase = require("./database/connectDatabase");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const authRoutes = require("./routes/authRoutes/authRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -17,18 +19,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
-app.use(cookieParser());
 
-// Fallback Route
-app.get("/", (req, res) => res.send("Express on Vercel"));
 
-// Error Handling Middleware
-app.use((error, req, res, next) => {
-  console.error("Error occurred:", error.stack);
-  const message = error.message || "Server Error Occurred";
-  const status = error.status || 500;
-  res.status(status).json({ success: false, message });
-});
+
+
 
 // Database Connection and Server Start
 (async () => {
@@ -43,5 +37,34 @@ app.use((error, req, res, next) => {
     console.error("Failed to connect to the database", error);
   }
 })();
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || "jamiKhan",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.SERVER_Database || "mongodb://localhost:27017/auth-demo",
+      ttl: 60 * 60 * 24, // 1 day
+    }),
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+    },
+}))
+
+
+// Routes
+app.use("/api/v1/auth", authRoutes)
+
+
+// Error Handling Middleware
+app.use((error, req, res, next) => {
+  console.error("Error occurred:", error.stack);
+  const message = error.message || "Server Error Occurred";
+  const status = error.status || 500;
+  res.status(status).json({ success: false, message });
+});
+
 
 module.exports = app;
