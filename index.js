@@ -20,10 +20,6 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
 
-
-
-
-
 // Database Connection and Server Start
 (async () => {
   try {
@@ -38,25 +34,27 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
   }
 })();
 
-app.use(session({
-  secret: process.env.SESSION_SECRET || "jamiKhan",
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "jamiKhan",
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.SERVER_Database || "mongodb://localhost:27017/auth-demo",
-      ttl: 60 * 60 * 24, // 1 day
+      mongoUrl: process.env.SERVER_Database,
+      ttl: 3600, // Session expires after 1 hour
+      autoRemove: "interval", //  expired sessions are deleted
+      autoRemoveInterval: 10, // Cleanup every 10 minutes
     }),
     cookie: {
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      maxAge: 3600000, // 1 hour
     },
-}))
-
+  })
+);
 
 // Routes
-app.use("/api/v1/auth", authRoutes)
-
+app.use("/api/v1/auth", authRoutes);
 
 // Error Handling Middleware
 app.use((error, req, res, next) => {
@@ -65,6 +63,5 @@ app.use((error, req, res, next) => {
   const status = error.status || 500;
   res.status(status).json({ success: false, message });
 });
-
 
 module.exports = app;

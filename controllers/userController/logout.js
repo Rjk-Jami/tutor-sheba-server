@@ -4,7 +4,7 @@ const logout = async (req, res) => {
       return res.status(500).json({ message: "Could not log out" });
     }
     res.clearCookie("connect.sid");
-    res.json({ message: "Logged out successfully" });
+    res.send({ message: "Logged out successfully" });
   });
 };
 
