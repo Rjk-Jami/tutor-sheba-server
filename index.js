@@ -4,6 +4,8 @@ const connectDatabase = require("./database/connectDatabase");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const authRoutes = require("./routes/authRoutes/authRoutes");
+const District = require("./model/District");
+const Location = require("./model/Location");
 require("dotenv").config();
 
 const app = express();
@@ -62,6 +64,12 @@ app.use((error, req, res, next) => {
   const message = error.message || "Server Error Occurred";
   const status = error.status || 500;
   res.status(status).json({ success: false, message });
+});
+
+app.get("/", async (req, res) => {
+ console.log(await District.find())
+ console.log(await Location.find())
+  res.send("Hello World!");
 });
 
 module.exports = app;

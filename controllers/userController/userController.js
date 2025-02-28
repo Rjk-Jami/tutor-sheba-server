@@ -63,7 +63,7 @@ const registration = async (req, res) => {
 
       await newStudent.save();
       console.log(newStudent, "Student saved to DB");
-
+      
       const user = {
         _id: newStudent._id,
         name: newStudent.name,
@@ -85,18 +85,28 @@ const registration = async (req, res) => {
       // TODO: Implement tutor registration logic
       return res
         .status(200)
-        .send({ success: true, message: "Tutor registration is not implemented yet." });
+        .send({
+          success: true,
+          message: "Tutor registration is not implemented yet.",
+        });
     }
 
     // If role is invalid
     return res
       .status(400)
-      .send({ success: false, message: "Invalid role. Must be 'student' or 'tutor'." });
+      .send({
+        success: false,
+        message: "Invalid role. Must be 'student' or 'tutor'.",
+      });
   } catch (error) {
     console.error("Error in registration:", error);
     res
       .status(500)
-      .send({    success: false, message: "Server error during registration.", error });
+      .send({
+        success: false,
+        message: "Server error during registration.",
+        error,
+      });
   }
 };
 
@@ -120,7 +130,9 @@ const login = async (req, res, next) => {
     }
 
     if (!existingUser) {
-      return res.status(401).send({ success: false, message: "Invalid credentials" });
+      return res
+        .status(401)
+        .send({ success: false, message: "Invalid credentials" });
     }
 
     const isMatch = await bcrypt.compare(
@@ -128,7 +140,9 @@ const login = async (req, res, next) => {
       existingUser?.password
     );
     if (!isMatch) {
-      return res.status(401).send({ success: false, message: "Invalid Password" });
+      return res
+        .status(401)
+        .send({ success: false, message: "Invalid Password" });
     }
 
     // console.log(existingUser, "user");
@@ -140,7 +154,6 @@ const login = async (req, res, next) => {
         name: existingUser.name,
         phone: existingUser.phone,
       };
-      
     } else if (role === "tutor") {
       user = {
         _id: existingUser._id,
@@ -151,7 +164,7 @@ const login = async (req, res, next) => {
 
     // Create session and return user data
     const userData = createUserSession(user, req);
-    console.log(userData)
+    console.log(userData);
     res.send({
       success: true,
       role,
