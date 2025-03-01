@@ -173,6 +173,7 @@ const registration = async (req, res) => {
       console.log(userData, "userData");
     }
     return res.status(200).send({
+      success: true,
       role: role,
       message: "User registered successfully.",
       user: userData,
