@@ -6,6 +6,7 @@ const MongoStore = require("connect-mongo");
 const authRoutes = require("./routes/authRoutes/authRoutes");
 const District = require("./model/District");
 const Location = require("./model/Location");
+const userRoutes = require("./routes/userRoutes/userRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -57,6 +58,7 @@ app.use(
 
 // Routes
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
 
 // Error Handling Middleware
 app.use((error, req, res, next) => {
@@ -67,8 +69,8 @@ app.use((error, req, res, next) => {
 });
 
 app.get("/", async (req, res) => {
- console.log(await District.find())
- console.log(await Location.find())
+//  console.log(await District.find())
+//  console.log(await Location.find())
   res.send("Hello World!");
 });
 
