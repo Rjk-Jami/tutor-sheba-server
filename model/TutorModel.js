@@ -4,17 +4,36 @@ const tutorSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minlength: 3,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
   },
   phone: {
     type: String,
     required: true,
     
   },
-  email: {
+  gender: {
     type: String,
     required: true,
-    unique: true,
+    enum: ['male', 'female'],
+  },
+  district: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "District",
+    required: true,
+  },
+  location: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Location",
+    required: true,
+  },
+  preferredArea: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Location",
+    required: true,
   },
   password: {
     type: String,

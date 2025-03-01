@@ -29,29 +29,37 @@ const registration = async (req, res) => {
     const { userInfo } = req.body;
 
     const { role, userDetails } = userInfo;
-    const { name, phone, password } = userDetails;
-
-    if (!name || !phone || !password) {
-      return res
-        .status(400)
-        .send({ message: "All fields (name, phone, password) are required." });
-    }
-
-    // Check if user already exists
-    const existingUser = await StudentModel.findOne({ phone });
-    if (existingUser) {
-      //   console.log("User already exists");
+    if (!role) {
+      // If role is invalid
       return res.status(400).send({
         success: false,
-        message: "User already exists with this phone number.",
+        message: "Invalid role. Must be 'student' or 'tutor'.",
       });
     }
-
-    // Hash password before saving
+    let existingUser = {};
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
+    let userData = {};
     if (role === "student") {
+      const { name, phone, password } = userDetails;
+
+      if (!name || !phone || !password) {
+        return res.status(400).send({
+          message: "All fields (name, phone, password) are required.",
+        });
+      }
+      // Check if user already exists
+      existingUser = await StudentModel.findOne({ phone });
+      if (existingUser) {
+        //   console.log("User already exists");
+        return res.status(400).send({
+          success: false,
+          message: "User already exists with this phone number.",
+        });
+      }
+      // Hash password before saving
+
+      const hashedPassword = await bcrypt.hash(password, salt);
+
       console.log(userDetails, "Student registration");
 
       // create new student
@@ -63,53 +71,126 @@ const registration = async (req, res) => {
 
       await newStudent.save();
       console.log(newStudent, "Student saved to DB");
-      
+
       const user = {
         _id: newStudent._id,
         name: newStudent.name,
         phone: newStudent.phone,
       };
 
-      const studentData = createUserSession(user, req);
+      userData = createUserSession(user, req);
 
-      console.log(studentData, "studentData");
-
-      return res.status(200).send({
-        role: "student",
-        message: "Student registered successfully.",
-        user: studentData,
-      });
+      console.log(userData, "userData");
     } else if (role === "tutor") {
-      console.log(userDetails, "Tutor registration");
+      const {
+        name,
+        email,
+        phone,
+        gender,
+        district,
+        location,
+        preferredArea,
+        password,
+      } = userDetails;
 
-      // TODO: Implement tutor registration logic
-      return res
-        .status(200)
-        .send({
-          success: true,
-          message: "Tutor registration is not implemented yet.",
+      // console.log(
+      //   name,
+      //   email,
+      //   phone,
+      //   gender,
+      //   district,
+      //   location,
+      //   preferredArea,
+      //   password,
+      //   "userDetails"
+      // );
+
+      if (
+        !name ||
+        !email ||
+        !phone ||
+        !gender ||
+        !district ||
+        !location ||
+        !preferredArea ||
+        !password
+      ) {
+        return res.status(400).send({
+          message:
+            "All fields (name, email, phone, gender, district, location, preferredArea, password) are required.",
         });
-    }
+      }
+      // Check if user already exists
+      existingUser = await TutorModel.findOne({ email });
+      if (existingUser) {
+        //   console.log("User already exists");
+        return res.status(400).send({
+          success: false,
+          message: "Tutor already exists with this email.",
+        });
+      }
+      // Hash password before saving
+      const hashedPassword = await bcrypt.hash(password, salt);
+      console.log(
+        name,
+        email,
+        phone,
+        gender,
+        district,
+        location,
+        preferredArea,
+        hashedPassword,
+        "userDetails"
+      );
 
-    // If role is invalid
-    return res
-      .status(400)
-      .send({
-        success: false,
-        message: "Invalid role. Must be 'student' or 'tutor'.",
+      // create new Tutor
+      const newTutor = new TutorModel({
+        name,
+        email,
+        phone,
+        gender,
+        district,
+        location,
+        preferredArea,
+        password: hashedPassword, // store hashed password
       });
+      await newTutor.save();
+      // console.log(newTutor, "Tutor saved to DB");
+
+      // destructure newTutor
+      const user = {
+        _id: newTutor._id,
+        name: newTutor.name,
+        email: newTutor.email,
+        phone: newTutor.phone,
+        gender: newTutor.gender,
+        district: newTutor.district,
+        location: newTutor.location,
+        preferredArea: newTutor.preferredArea,
+      };
+
+      userData = createUserSession(user, req);
+      console.log(userData, "userData");
+    }
+    return res.status(200).send({
+      role: role,
+      message: "User registered successfully.",
+      user: userData,
+    });
   } catch (error) {
     console.error("Error in registration:", error);
-    res
-      .status(500)
-      .send({
-        success: false,
-        message: "Server error during registration.",
-        error,
-      });
+    res.status(500).send({
+      success: false,
+      message: "Server error during registration.",
+      error,
+    });
   }
 };
 
+
+
+
+// Login
 const login = async (req, res, next) => {
   try {
     const { userInfo } = req.body;
@@ -159,6 +240,11 @@ const login = async (req, res, next) => {
         _id: existingUser._id,
         name: existingUser.name,
         email: existingUser.email,
+        phone: existingUser.phone,
+        gender: existingUser.gender,
+        district: existingUser.district,
+        location: existingUser.location,
+        preferredArea: existingUser.preferredArea,
       };
     }
 
