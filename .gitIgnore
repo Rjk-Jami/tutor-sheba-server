@@ -1,3 +1,4 @@
 .env
 .vercel
-.district.json
+Districts.json
+class.json
