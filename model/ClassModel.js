@@ -4,7 +4,7 @@ const classSchema = new mongoose.Schema({
   name: { type: String, required: true },
   medium: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Medium",
+    ref: "Mediums",
     required: true,
   },
 });
