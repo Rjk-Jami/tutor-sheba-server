@@ -1,7 +1,7 @@
 [
     {
-        "jobId": "1003",
-        "title": "Female Tutor Needed For English Version",
+        "jobId": "3003",
+        "title": "Tutor Needed For English Version (Female Preferred)",
         "location": {
             "district": {
                 "$oid": "67c208d8f6dfedb176a3e098"
@@ -49,8 +49,8 @@
         "tuitionType": "homeTuition"
     },
     {
-        "jobId": "1004",
-        "title": "Tutor Needed For Bangla Medium",
+        "jobId": "3004",
+        "title": "Tutor Needed For Chemistry, Physics and Higher Maths",
         "location": {
             "district": {
                 "$oid": "67c208d8f6dfedb176a3e098"
@@ -93,8 +93,8 @@
         "tuitionType": "homeTuition"
     },
     {
-        "jobId": "",
-        "title": "Tutor Needed For Bangla Medium",
+        "jobId": "3010",
+        "title": "Tutor Needed For Physics",
         "location": {
             "district": {
                 "$oid": "67c208d8f6dfedb176a3e098"
@@ -135,14 +135,22 @@
         "tuitionType": "onlineTuition"
     },
     {
-        "jobId": "1005",
-        "title": "Female Tutor Needed For English Version",
+        "jobId": "3005",
+        "title": "Tutor Needed For Biology and Chemistry",
         "location": {
-            "district": { "$oid": "67c208d8f6dfedb176a3e098" },
-            "Location": { "$oid": "67c22905f6dfedb176a3ee29" }
+            "district": {
+                "$oid": "67c208d8f6dfedb176a3e098"
+            },
+            "Location": {
+                "$oid": "67c22905f6dfedb176a3ee29"
+            }
         },
-        "medium": { "$oid": "67c3b5d1f6dfedb176a4929d" },
-        "class": { "$oid": "67c3babdf6dfedb176a494c1" },
+        "medium": {
+            "$oid": "67c3b5d1f6dfedb176a4929d"
+        },
+        "class": {
+            "$oid": "67c3babdf6dfedb176a494c1"
+        },
         "student": {
             "gender": "Female",
             "count": 1
@@ -152,11 +160,18 @@
         },
         "tutoring": {
             "days": 5,
-            "specificDays": ["Monday", "Wednesday", "Friday"],
+            "specificDays": [
+                "Monday",
+                "Wednesday",
+                "Friday"
+            ],
             "time": "5:00 PM",
             "duration": "2 hours"
         },
-        "subject": ["Biology", "Chemistry"],
+        "subject": [
+            "Biology",
+            "Chemistry"
+        ],
         "salary": {
             "amount": 6000,
             "currency": "Tk",
@@ -164,17 +179,25 @@
         },
         "requirements": "Experienced tutors preferred from DU/BUP.",
         "status": "Active",
-         "tuitionType": "onlineTuition"
+        "tuitionType": "onlineTuition"
     },
     {
-        "jobId": "1006",
-        "title": "Tutor Needed For Madrasa Medium",
+        "jobId": "3006",
+        "title": "Tutor Needed For Arabic & Islamic Studies",
         "location": {
-            "district": { "$oid": "67c208d8f6dfedb176a3e098" },
-            "Location": { "$oid": "67c22905f6dfedb176a3ee56" }
+            "district": {
+                "$oid": "67c208d8f6dfedb176a3e098"
+            },
+            "Location": {
+                "$oid": "67c22905f6dfedb176a3ee56"
+            }
         },
-        "medium": { "$oid": "67c3b5d1f6dfedb176a4929f" },
-        "class": { "$oid": "67c3babdf6dfedb176a494d5" },
+        "medium": {
+            "$oid": "67c3b5d1f6dfedb176a4929f"
+        },
+        "class": {
+            "$oid": "67c3babdf6dfedb176a494d5"
+        },
         "student": {
             "gender": "male",
             "count": 3
@@ -184,11 +207,18 @@
         },
         "tutoring": {
             "days": 4,
-            "specificDays": ["Tuesday", "Thursday", "Saturday"],
+            "specificDays": [
+                "Tuesday",
+                "Thursday",
+                "Saturday"
+            ],
             "time": "6:30 PM",
             "duration": "1.5 hours"
         },
-        "subject": ["Arabic", "Islamic Studies"],
+        "subject": [
+            "Arabic",
+            "Islamic Studies"
+        ],
         "salary": {
             "amount": 5000,
             "currency": "Tk",
@@ -196,17 +226,25 @@
         },
         "requirements": "Madrasah graduates preferred.",
         "status": "Active",
-         "tuitionType": "homeTuition"
+        "tuitionType": "homeTuition"
     },
     {
-        "jobId": "1007",
-        "title": "Tutor Needed For Class 10 (English Version)",
+        "jobId": "3007",
+        "title": "Tutor Needed For Class 10 Science",
         "location": {
-            "district": { "$oid": "67c208d8f6dfedb176a3e0a7" },
-            "Location": { "$oid": "67c22906f6dfedb176a3f1dc" }
+            "district": {
+                "$oid": "67c208d8f6dfedb176a3e0a7"
+            },
+            "Location": {
+                "$oid": "67c22906f6dfedb176a3f1dc"
+            }
         },
-        "medium": { "$oid": "67c3b5d1f6dfedb176a4929d" },
-        "class": { "$oid": "67c3babdf6dfedb176a494be" },
+        "medium": {
+            "$oid": "67c3b5d1f6dfedb176a4929d"
+        },
+        "class": {
+            "$oid": "67c3babdf6dfedb176a494be"
+        },
         "student": {
             "gender": "Male",
             "count": 1
@@ -216,11 +254,18 @@
         },
         "tutoring": {
             "days": 3,
-            "specificDays": ["Sunday", "Tuesday", "Thursday"],
+            "specificDays": [
+                "Sunday",
+                "Tuesday",
+                "Thursday"
+            ],
             "time": "4:00 PM",
             "duration": "1 hour"
         },
-        "subject": ["Mathematics", "Physics"],
+        "subject": [
+            "Mathematics",
+            "Physics"
+        ],
         "salary": {
             "amount": 7000,
             "currency": "Tk",
@@ -228,17 +273,25 @@
         },
         "requirements": "Tutors from IBA/Dhaka University preferred.",
         "status": "Active",
-         "tuitionType": "homeTuition"
+        "tuitionType": "homeTuition"
     },
     {
-        "jobId": "1008",
-        "title": "Tutor Needed For HSC 1st Year (Science)",
+        "jobId": "3008",
+        "title": "Tutor Needed For HSC 1st Year",
         "location": {
-            "district": { "$oid": "67c208d8f6dfedb176a3e099" },
-            "Location": { "$oid": "67c22905f6dfedb176a3eeba" }
+            "district": {
+                "$oid": "67c208d8f6dfedb176a3e099"
+            },
+            "Location": {
+                "$oid": "67c22905f6dfedb176a3eeba"
+            }
         },
-        "medium": { "$oid": "67c3b5d1f6dfedb176a4929c" },
-        "class": { "$oid": "67c3babdf6dfedb176a494af" },
+        "medium": {
+            "$oid": "67c3b5d1f6dfedb176a4929c"
+        },
+        "class": {
+            "$oid": "67c3babdf6dfedb176a494af"
+        },
         "student": {
             "gender": "Female",
             "count": 2
@@ -248,11 +301,19 @@
         },
         "tutoring": {
             "days": 5,
-            "specificDays": ["Monday", "Wednesday", "Friday", "Sunday"],
+            "specificDays": [
+                "Monday",
+                "Wednesday",
+                "Friday",
+                "Sunday"
+            ],
             "time": "7:00 PM",
             "duration": "2 hours"
         },
-        "subject": ["Physics", "Chemistry", "Higher Math"],
+        "subject": [
+            "Chemistry",
+            "Higher Math"
+        ],
         "salary": {
             "amount": 8000,
             "currency": "Tk",
@@ -260,17 +321,25 @@
         },
         "requirements": "Tutor should be well-versed in HSC syllabus.",
         "status": "Active",
-         "tuitionType": "homeTuition"
+        "tuitionType": "homeTuition"
     },
     {
-        "jobId": "1009",
-        "title": "Tutor Needed For Class 7 (Bangla Medium)",
+        "jobId": "3009",
+        "title": "Tutor Needed For Class 7 English, Mathematics, Science",
         "location": {
-            "district": { "$oid": "67c208d8f6dfedb176a3e09a" },
-            "Location": { "$oid": "67c22905f6dfedb176a3ef91" }
+            "district": {
+                "$oid": "67c208d8f6dfedb176a3e09a"
+            },
+            "Location": {
+                "$oid": "67c22905f6dfedb176a3ef91"
+            }
         },
-        "medium": { "$oid": "67c3b5d1f6dfedb176a4929c" },
-        "class": { "$oid": "67c3babdf6dfedb176a494aa" },
+        "medium": {
+            "$oid": "67c3b5d1f6dfedb176a4929c"
+        },
+        "class": {
+            "$oid": "67c3babdf6dfedb176a494aa"
+        },
         "student": {
             "gender": "Female",
             "count": 1
@@ -280,11 +349,20 @@
         },
         "tutoring": {
             "days": 4,
-            "specificDays": ["Monday", "Wednesday", "Friday", "Saturday"],
+            "specificDays": [
+                "Monday",
+                "Wednesday",
+                "Friday",
+                "Saturday"
+            ],
             "time": "5:30 PM",
             "duration": "1.5 hours"
         },
-        "subject": ["English", "Mathematics", "Science"],
+        "subject": [
+            "English",
+            "Mathematics",
+            "Science"
+        ],
         "salary": {
             "amount": 4500,
             "currency": "Tk",
@@ -292,8 +370,495 @@
         },
         "requirements": "Tutor should have experience in teaching Class 7.",
         "status": "Active",
-         "tuitionType": "onlineTuition"
-    }
-
+        "tuitionType": "onlineTuition"
+    },
    
+    {
+        "jobId": "2001",
+        "title": "Female Tutor Needed For English Version",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e098"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3edbf"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929f"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bc"
+        },
+        "student": {
+          "gender": "Female",
+          "count": 2
+        },
+        "tutor": {
+          "preferredGender": "Female"
+        },
+        "tutoring": {
+          "days": 5,
+          "specificDays": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Wednesday",
+            "Friday"
+          ],
+          "time": "4:00 PM - 6:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Mathematics",
+          "Physics"
+        ],
+        "salary": {
+          "amount": 12345,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Experience in teaching English Version students is required.",
+        "status": "Active",
+        "tuitionTypes": "homeTuition"
+      },
+      {
+        "jobId": "2002",
+        "title": "Experienced Math Tutor Required for Class 10",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e098"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3edbf"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929e"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494be"
+        },
+        "student": {
+          "gender": "Male",
+          "count": 1
+        },
+        "tutor": {
+          "preferredGender": "Male"
+        },
+        "tutoring": {
+          "days": 4,
+          "specificDays": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+          ],
+          "time": "5:00 PM - 7:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "English",
+          "Bangla"
+        ],
+        "salary": {
+          "amount": 8642,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Must be from a reputed university.",
+        "status": "Active",
+        "tuitionTypes": "onlineTuition"
+      },
+      {
+        "jobId": "2003",
+        "title": "Online Science Tutor for Class 8 Student",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e098"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3edbf"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929d"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bd"
+        },
+        "student": {
+          "gender": "Female",
+          "count": 3
+        },
+        "tutor": {
+          "preferredGender": "All"
+        },
+        "tutoring": {
+          "days": 4,
+          "specificDays": [
+            "Saturday",
+            "Sunday",
+            "Tuesday",
+            "Thursday"
+          ],
+          "time": "3:00 PM - 5:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Science",
+          "Mathematics"
+        ],
+        "salary": {
+          "amount": 9876,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Should have experience teaching O-level students.",
+        "status": "Active",
+        "tuitionTypes": "onlineTuition"
+      },
+      {
+        "jobId": "2004",
+        "title": "Male Tutor Needed for Physics and Chemistry",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e098"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3edc5"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929e"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bf"
+        },
+        "student": {
+          "gender": "Male",
+          "count": 2
+        },
+        "tutor": {
+          "preferredGender": "Male"
+        },
+        "tutoring": {
+          "days": 3,
+          "specificDays": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+          ],
+          "time": "6:00 PM - 8:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Physics",
+          "Chemistry",
+          "Biology"
+        ],
+        "salary": {
+          "amount": 11234,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Must be patient and good with children.",
+        "status": "Filled",
+        "tuitionTypes": "homeTuition"
+      },
+      {
+        "jobId": "2005",
+        "title": "Home Tutor Required for Primary Student",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e098"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3edc5"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929f"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bb"
+        },
+        "student": {
+          "gender": "Female",
+          "count": 1
+        },
+        "tutor": {
+          "preferredGender": "Female"
+        },
+        "tutoring": {
+          "days": 5,
+          "specificDays": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday"
+          ],
+          "time": "7:00 AM - 9:00 AM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Mathematics",
+          "English",
+          "Science"
+        ],
+        "salary": {
+          "amount": 7500,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Should have excellent communication skills.",
+        "status": "Active",
+        "tuitionTypes": "homeTuition"
+      },
+      {
+        "jobId": "2006",
+        "title": "English Language Tutor for O-Level Student",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e09b"
+          },
+          "Location": {
+            "$oid": "67c22905f6dfedb176a3efac"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929d"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494c0"
+        },
+        "student": {
+          "gender": "Male",
+          "count": 1
+        },
+        "tutor": {
+          "preferredGender": "All"
+        },
+        "tutoring": {
+          "days": 5,
+          "specificDays": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "time": "9:00 AM - 11:00 AM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Bangla",
+          "English",
+          "Social Science"
+        ],
+        "salary": {
+          "amount": 14500,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Previous tutoring experience is required.",
+        "status": "Active",
+        "tuitionTypes": "allTuition"
+      },
+      {
+        "jobId": "2007",
+        "title": "Math and Science Tutor for Class 7 Student",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e09b"
+          },
+          "Location": {
+            "$oid": "67c22906f6dfedb176a3efc3"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929e"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bd"
+        },
+        "student": {
+          "gender": "Male",
+          "count": 2
+        },
+        "tutor": {
+          "preferredGender": "Male"
+        },
+        "tutoring": {
+          "days": 4,
+          "specificDays": [
+            "Saturday",
+            "Monday",
+            "Wednesday",
+            "Friday"
+          ],
+          "time": "2:00 PM - 4:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Mathematics",
+          "Physics",
+          "Chemistry"
+        ],
+        "salary": {
+          "amount": 10000,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Must be knowledgeable in the subjects.",
+        "status": "Active",
+        "tuitionTypes": "homeTuition"
+      },
+      {
+        "jobId": "2008",
+        "title": "Female Tutor for English and ICT",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e09c"
+          },
+          "Location": {
+            "$oid": "67c22906f6dfedb176a3f02a"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929f"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494be"
+        },
+        "student": {
+          "gender": "Female",
+          "count": 1
+        },
+        "tutor": {
+          "preferredGender": "Female"
+        },
+        "tutoring": {
+          "days": 3,
+          "specificDays": [
+            "Sunday",
+            "Tuesday",
+            "Thursday"
+          ],
+          "time": "7:00 PM - 9:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "English",
+          "ICT"
+        ],
+        "salary": {
+          "amount": 8000,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Should be able to explain complex concepts in simple terms.",
+        "status": "Expired",
+        "tuitionTypes": "onlineTuition"
+      },
+      {
+        "jobId": "2009",
+        "title": "Experienced Tutor for Multiple Subjects",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e09c"
+          },
+          "Location": {
+            "$oid": "67c22906f6dfedb176a3f025"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929d"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bc"
+        },
+        "student": {
+          "gender": "Male",
+          "count": 3
+        },
+        "tutor": {
+          "preferredGender": "All"
+        },
+        "tutoring": {
+          "days": 5,
+          "specificDays": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "time": "10:00 AM - 12:00 PM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Mathematics",
+          "English",
+          "Bangla",
+          "Science"
+        ],
+        "salary": {
+          "amount": 13000,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Must be punctual and committed.",
+        "status": "Active",
+        "tuitionTypes": "allTuition"
+      },
+      {
+        "jobId": "2010",
+        "title": "Physics and Chemistry Tutor for Class 9",
+        "location": {
+          "district": {
+            "$oid": "67c208d8f6dfedb176a3e09c"
+          },
+          "Location": {
+            "$oid": "67c22906f6dfedb176a3f025"
+          }
+        },
+        "medium": {
+          "$oid": "67c3b5d1f6dfedb176a4929e"
+        },
+        "class": {
+          "$oid": "67c3babdf6dfedb176a494bf"
+        },
+        "student": {
+          "gender": "Female",
+          "count": 2
+        },
+        "tutor": {
+          "preferredGender": "Male"
+        },
+        "tutoring": {
+          "days": 4,
+          "specificDays": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Wednesday"
+          ],
+          "time": "8:00 AM - 10:00 AM",
+          "duration": "2 hours"
+        },
+        "subject": [
+          "Physics",
+          "Chemistry"
+        ],
+        "salary": {
+          "amount": 9500,
+          "currency": "Tk",
+          "period": "Month"
+        },
+        "requirements": "Should have a strong academic background.",
+        "status": "Active",
+        "tuitionTypes": "homeTuition"
+      }
 ]
