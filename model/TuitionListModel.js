@@ -28,7 +28,7 @@ const tuitionSchema = new mongoose.Schema(
       ref: "Mediums",
       required: true,
     },
-    class: {
+    classOfMedium: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Classes",
       required: true,
@@ -95,6 +95,7 @@ const tuitionSchema = new mongoose.Schema(
       default: "Active",
       required: true,
     },
+    postedAt: { type: Date, required: true, default: Date.now },
   },
   { timestamps: true, versionKey: false }
 );
