@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
-const { StudentModel } = require("../../model/studentModel");
 const jwt = require("jsonwebtoken");
 const { TutorModel } = require("../../model/TutorModel");
+const { StudentModel } = require("../../model/StudentModel");
 
 // Helper function to create JWT token and session
 const createUserSession = (user, req) => {
@@ -202,7 +202,7 @@ const login = async (req, res, next) => {
     // search student from database
     if (role === "student") {
       const { phone, password } = userDetails;
-      existingUser = await StudentModel.findOne({ phone });
+      existingUser = await Studen.findOne({ phone });
     }
 
     // search tutor from database

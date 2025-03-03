@@ -76,7 +76,7 @@ app.get("/", async (req, res) => {
 //  console.log(await Location.find())
 //  console.log(await MediumModel.find())
 //  console.log(await ClassModel.find())
- console.log(await TuitionList.find())
+//  console.log(await TuitionList.find())
 res.json(await TuitionList.find())
   // res.send("Hello World!");
 });
