@@ -9,6 +9,7 @@ const Location = require("./model/Location");
 const userRoutes = require("./routes/userRoutes/userRoutes");
 const MediumModel = require("./model/MediumModel");
 const ClassModel = require("./model/ClassModel");
+const { TuitionList } = require("./model/TuitionListModel");
 require("dotenv").config();
 
 const app = express();
@@ -73,9 +74,11 @@ app.use((error, req, res, next) => {
 app.get("/", async (req, res) => {
 //  console.log(await District.find())
 //  console.log(await Location.find())
- console.log(await MediumModel.find())
- console.log(await ClassModel.find())
-  res.send("Hello World!");
+//  console.log(await MediumModel.find())
+//  console.log(await ClassModel.find())
+ console.log(await TuitionList.find())
+res.json(await TuitionList.find())
+  // res.send("Hello World!");
 });
 
 module.exports = app;
